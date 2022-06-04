@@ -12,7 +12,7 @@ class MyListExpensesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Мои расходы"
+        setupNavigationBar()
 
     }
 
@@ -22,7 +22,6 @@ class MyListExpensesTableViewController: UITableViewController {
         return 10
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCellTableViewCell
         cell.titleLabel.text = "Машина"
@@ -75,4 +74,21 @@ class MyListExpensesTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension MyListExpensesTableViewController {
+    
+    private func setupNavigationBar() {
+        title = "Мои расходы"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewExpenses))
+    }
+    
+    @objc private func addNewExpenses() {
+        
+    }
+    
 }
