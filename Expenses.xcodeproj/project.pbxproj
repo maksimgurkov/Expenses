@@ -16,6 +16,7 @@
 		76C05C0A284BC8A900EC0042 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C05C08284BC8A900EC0042 /* LaunchScreen.storyboard */; };
 		76C05C16284BCAB000EC0042 /* MyListExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C15284BCAB000EC0042 /* MyListExpensesTableViewController.swift */; };
 		76C05C19284BCB1900EC0042 /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */; };
+		76C05C1C284BD24100EC0042 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C1B284BD24100EC0042 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		76C05C0B284BC8A900EC0042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76C05C15284BCAB000EC0042 /* MyListExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListExpensesTableViewController.swift; sourceTree = "<group>"; };
 		76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
+		76C05C1B284BD24100EC0042 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		76C05BF9284BC8A800EC0042 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				76C05C1A284BD22C00EC0042 /* Model */,
 				76C05C17284BCAFF00EC0042 /* Cell */,
 				76C05C11284BC8DA00EC0042 /* App */,
 				76C05C12284BC90200EC0042 /* View */,
@@ -114,6 +117,14 @@
 				76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		76C05C1A284BD22C00EC0042 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76C05C1B284BD24100EC0042 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C05C1C284BD24100EC0042 /* Model.swift in Sources */,
 				76C05C05284BC8A800EC0042 /* Expenses.xcdatamodeld in Sources */,
 				76C05C16284BCAB000EC0042 /* MyListExpensesTableViewController.swift in Sources */,
 				76C05BFF284BC8A800EC0042 /* MyListExpensesViewController.swift in Sources */,

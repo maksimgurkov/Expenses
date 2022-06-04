@@ -8,6 +8,8 @@
 import UIKit
 
 class MyListExpensesTableViewController: UITableViewController {
+    
+    private var expenses: [Expenses] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +21,15 @@ class MyListExpensesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return expenses.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCellTableViewCell
-        cell.titleLabel.text = "Машина"
+        cell.titleLabel.text = expenses[indexPath.row].title
         return cell
     }
+    
     
 
     /*
@@ -88,7 +91,17 @@ extension MyListExpensesTableViewController {
     }
     
     @objc private func addNewExpenses() {
-        
+        newExpensesAlert()
+    }
+    
+    private func newExpensesAlert() {
+        let alert = UIAlertController(
+            title: "Информация",
+            message: "Добавьте позицию расходов",
+            preferredStyle: .alert)
+        let newExpenses = UIAlertAction(title: "Добавить", style: .default)
+        alert.addAction(newExpenses)
+        present(alert, animated: true)
     }
     
 }
