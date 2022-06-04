@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MyListExpensesViewController.swift
 //  Expenses
 //
 //  Created by Максим Гурков on 04.06.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MyListExpensesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
