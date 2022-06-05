@@ -138,7 +138,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="XsA-ME-y1k"/>
                     <connections>
+                        <outlet property="countDayLabel" destination="wQh-Xl-BbS" id="EdE-NB-oZ1"/>
                         <outlet property="expensesButton" destination="ImX-AN-zL3" id="Rnj-iP-cmj"/>
+                        <outlet property="sumLabel" destination="Gdi-zh-rms" id="ue0-sQ-Sww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUr-ZM-lGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

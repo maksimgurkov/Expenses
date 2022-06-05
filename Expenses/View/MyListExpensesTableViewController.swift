@@ -26,19 +26,22 @@ class MyListExpensesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCellTableViewCell
-        cell.titleLabel.text = expenses[indexPath.row].title
+        let expens = expenses[indexPath.row]
+        cell.titleLabel.text = expens.title
+        cell.sumLabel.text = "\(expens.sumExpenses) руб."
+        cell.countDaysLabel.text = "Добавлено \(expens.countExpenses) расходов"
         return cell
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let infoVC = segue.destination as? InfoListExpensesViewController else { return }
+        guard let index = tableView.indexPathForSelectedRow else { return }
+        infoVC.expens = expenses[index.row]
     }
-    */
+    
 
 }
 
@@ -64,7 +67,7 @@ extension MyListExpensesTableViewController {
             preferredStyle: .alert)
         let newExpenses = UIAlertAction(title: "Добавить", style: .default) { _ in
             guard let expens = alert.textFields?.first?.text, !expens.isEmpty else { return }
-            let new = Expenses.init(title: expens)
+            let new = Expenses(title: expens)
             self.expenses.append(new)
             self.tableView.reloadData()
         }
