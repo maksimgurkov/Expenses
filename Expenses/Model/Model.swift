@@ -10,12 +10,15 @@ import Foundation
 class Expenses {
     
     let title: String
-    let nameExpenses = ""
-    let sumExpenses = 0
-    let countExpenses = 0
+    var nameExpenses = ""
+    var sumExpenses = 0
+    var countExpenses = 0
     
     init(title: String) {
         self.title = title
     }
+    
+    
+  
     
 }

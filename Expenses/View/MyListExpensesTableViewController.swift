@@ -65,8 +65,10 @@ extension MyListExpensesTableViewController {
             title: "Информация",
             message: "Добавьте позицию расходов",
             preferredStyle: .alert)
+        
         let newExpenses = UIAlertAction(title: "Добавить", style: .default) { _ in
             guard let expens = alert.textFields?.first?.text, !expens.isEmpty else { return }
+            
             let new = Expenses(title: expens)
             self.expenses.append(new)
             self.tableView.reloadData()

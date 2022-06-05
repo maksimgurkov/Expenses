@@ -120,6 +120,9 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Добавить расход"/>
+                                <connections>
+                                    <action selector="newExpensesButton:" destination="B0u-tM-TN7" eventType="touchUpInside" id="1pS-xj-Bjp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aNh-JU-okO"/>

@@ -27,7 +27,37 @@ class InfoListExpensesViewController: UIViewController {
         
         
     }
-
+    @IBAction func newExpensesButton(_ sender: Any) {
+        alert()
+    }
+    
+    private func alert() {
+        let alert = UIAlertController(
+            title: "Новый расход",
+            message: "Добавьте позицию расхода заполнив все поля",
+            preferredStyle: .alert)
+        let newExpenses = UIAlertAction(title: "Добавить", style: .default) { _ in
+            guard let name = alert.textFields?.first?.text, !name.isEmpty else { return }
+            guard let sum = alert.textFields?.last?.text, !sum.isEmpty else { return }
+            self.expens.nameExpenses = name
+            self.expens.sumExpenses += Int(sum) ?? 0
+            self.view.reloadInputViews()
+        }
+        let cancelAction = UIAlertAction(title: "Назад", style: .destructive)
+        
+        alert.addAction(newExpenses)
+        alert.addAction(cancelAction)
+        alert.addTextField { textField in
+            textField.placeholder = "Добавить имя расхода"
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Введите сумму"
+        }
+    
+        
+        present(alert, animated: true)
+    }
+    
 
 }
 
