@@ -7,10 +7,14 @@
 
 import UIKit
 
-class MyListExpensesViewController: UIViewController {
+class InfoListExpensesViewController: UIViewController {
 
+    @IBOutlet weak var expensesButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        expensesButton.layer.cornerRadius = 8
         
     }
 

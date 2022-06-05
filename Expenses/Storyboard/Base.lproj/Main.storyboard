@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +39,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35000 руб." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCU-BJ-BsR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="135000 руб." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCU-BJ-BsR">
                                                     <rect key="frame" x="10" y="52" width="323" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
@@ -78,6 +79,7 @@
                                     <outlet property="sumLabel" destination="jCU-BJ-BsR" id="fm0-il-1QC"/>
                                     <outlet property="titleLabel" destination="QcB-We-O0z" id="zd2-VT-rp4"/>
                                     <outlet property="viewColor" destination="dlJ-zw-iBO" id="cgw-wn-iak"/>
+                                    <segue destination="B0u-tM-TN7" kind="show" id="tiO-sM-Vmj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,6 +93,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wu-yx-XQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314.39999999999998" y="85.907046476761622"/>
+        </scene>
+        <!--Info List Expenses View Controller-->
+        <scene sceneID="Eaa-Ih-sFq">
+            <objects>
+                <viewController id="B0u-tM-TN7" customClass="InfoListExpensesViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVI-2u-IHi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdi-zh-rms">
+                                <rect key="frame" x="16" y="106" width="343" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество расходов 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQh-Xl-BbS">
+                                <rect key="frame" x="16" y="146" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-AN-zL3">
+                                <rect key="frame" x="100" y="187" width="175" height="31"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Добавить расход"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aNh-JU-okO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aNh-JU-okO" firstAttribute="trailing" secondItem="Gdi-zh-rms" secondAttribute="trailing" constant="16" id="4KX-5m-WMT"/>
+                            <constraint firstItem="aNh-JU-okO" firstAttribute="trailing" secondItem="ImX-AN-zL3" secondAttribute="trailing" constant="100" id="AaE-KW-AmK"/>
+                            <constraint firstItem="Gdi-zh-rms" firstAttribute="leading" secondItem="aNh-JU-okO" secondAttribute="leading" constant="16" id="Aww-6M-UoU"/>
+                            <constraint firstItem="wQh-Xl-BbS" firstAttribute="leading" secondItem="aNh-JU-okO" secondAttribute="leading" constant="16" id="Bpt-ZU-WhA"/>
+                            <constraint firstItem="ImX-AN-zL3" firstAttribute="top" secondItem="wQh-Xl-BbS" secondAttribute="bottom" constant="20" id="EV4-c3-gAl"/>
+                            <constraint firstItem="ImX-AN-zL3" firstAttribute="leading" secondItem="aNh-JU-okO" secondAttribute="leading" constant="100" id="Hyp-o3-Ym4"/>
+                            <constraint firstItem="wQh-Xl-BbS" firstAttribute="top" secondItem="Gdi-zh-rms" secondAttribute="bottom" constant="10" id="IjV-Ak-I4f"/>
+                            <constraint firstItem="aNh-JU-okO" firstAttribute="trailing" secondItem="wQh-Xl-BbS" secondAttribute="trailing" constant="16" id="qSu-hv-Xtl"/>
+                            <constraint firstItem="Gdi-zh-rms" firstAttribute="top" secondItem="aNh-JU-okO" secondAttribute="top" constant="10" id="qUU-At-912"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XsA-ME-y1k"/>
+                    <connections>
+                        <outlet property="expensesButton" destination="ImX-AN-zL3" id="Rnj-iP-cmj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PUr-ZM-lGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="85.907046476761622"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p7s-lX-qhE">
@@ -114,6 +167,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
