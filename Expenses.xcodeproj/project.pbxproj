@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76786CE8284E140100CC3A91 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76786CE7284E140100CC3A91 /* StorageManager.swift */; };
 		768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */; };
 		76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFA284BC8A800EC0042 /* AppDelegate.swift */; };
 		76C05BFD284BC8A800EC0042 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFC284BC8A800EC0042 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76786CE7284E140100CC3A91 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		76C05BF7284BC8A800EC0042 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C05BFA284BC8A800EC0042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76786CE6284E13DE00CC3A91 /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				76786CE7284E140100CC3A91 /* StorageManager.swift */,
+			);
+			path = StorageManager;
+			sourceTree = "<group>";
+		};
 		76C05BEE284BC8A800EC0042 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		76C05BF9284BC8A800EC0042 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				76786CE6284E13DE00CC3A91 /* StorageManager */,
 				76C05C1A284BD22C00EC0042 /* Model */,
 				76C05C17284BCAFF00EC0042 /* Cell */,
 				76C05C11284BC8DA00EC0042 /* App */,
@@ -205,6 +216,7 @@
 				76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */,
 				76C05BFD284BC8A800EC0042 /* SceneDelegate.swift in Sources */,
 				768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */,
+				76786CE8284E140100CC3A91 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

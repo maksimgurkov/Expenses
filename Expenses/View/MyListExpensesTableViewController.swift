@@ -9,12 +9,13 @@ import UIKit
 
 class MyListExpensesTableViewController: UITableViewController {
     
-    private var expenses: [Expenses] = []
+    private var expenses: [Entity] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
+        fetchData()
 
     }
     
@@ -31,22 +32,53 @@ class MyListExpensesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCellTableViewCell
-        let expens = expenses[indexPath.row]
-        cell.titleLabel.text = expens.title
-        cell.sumLabel.text = "\(expens.sumExpenses) руб."
-        cell.countDaysLabel.text = "Добавлено \(expens.countExpenses) расходов"
+        let expense = expenses[indexPath.row]
+        cell.titleLabel.text = expense.title
+        cell.sumLabel.text = "\(expense.sumExpenses) руб."
+        cell.countDaysLabel.text = "Добавлено \(expense.countExpenses) расходов"
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let expense = expenses[indexPath.row]
+        
+        if editingStyle == .delete {
+            expenses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.delete(expenses: expense)
+        }
+    }
     
-    // MARK: - Navigation
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVC = segue.destination as? TestTableViewController else { return }
         guard let index = tableView.indexPathForSelectedRow else { return }
-        infoVC.expens = expenses[index.row]
+        infoVC.expense = expenses[index.row]
     }
     
+    private func save(_ expensesName: String, sum: Int) {
+        StorageManager.shared.save(expensesName, sum: sum) { expenses in
+            self.expenses.append(expenses)
+            self.tableView.insertRows(
+                at: [IndexPath(row: self.expenses.count - 1, section: 0)],
+                with: .automatic
+            )
+        }
+    }
+    
+    private func fetchData() {
+        StorageManager.shared.fetchData { result in
+            switch result {
+            case .success(let expenses):
+                self.expenses = expenses
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 }
 
@@ -72,11 +104,8 @@ extension MyListExpensesTableViewController {
             preferredStyle: .alert)
         
         let newExpenses = UIAlertAction(title: "Добавить", style: .default) { _ in
-            guard let expens = alert.textFields?.first?.text, !expens.isEmpty else { return }
-            
-            let new = Expenses(title: expens)
-            self.expenses.append(new)
-            self.tableView.reloadData()
+            guard let expense = alert.textFields?.first?.text, !expense.isEmpty else { return }
+            self.save(expense, sum: 0)
         }
         
         

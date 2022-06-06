@@ -9,15 +9,15 @@ import UIKit
 
 class TestTableViewController: UITableViewController {
     
-    var expens: Expenses!
+    var expense: Entity!
     
-    private var expenses: [Test] = []
+    private var expenses: [EntityTwo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = expens.title
-        print(expenses.count)
-        
+
+        title = expense.title
+        fetchData()
         setupNavigationBar()
         
     }
@@ -33,32 +33,51 @@ class TestTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let expen = expenses[indexPath.row]
         var content = cell.defaultContentConfiguration()
-        content.text = expen.descriptionExpenses
-        content.secondaryText = "Расход \(expen.sumExpenses) руб."
+        content.text = expen.descriptionExpense
+        content.secondaryText = "Расход \(expen.sumExpense) руб."
         cell.contentConfiguration = content
-
         return cell
     }
     
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let expense = expenses[indexPath.row]
+        
+        if editingStyle == .delete {
+            expenses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteExpense(expense: expense)
+        }
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func save(_ expensesName: String, sum: Int) {
+        StorageManager.shared.saveExpense(descriptionExpense: expensesName, sumExpense: sum) { expense in
+            self.expenses.append(expense)
+            self.tableView.insertRows(
+                at: [IndexPath(row: self.expenses.count - 1, section: 0)],
+                with: .automatic)
+        }
+    }
+    
+    private func fetchData() {
+        StorageManager.shared.fetchDataExpense { result in
+            switch result {
+            case .success(let expenses):
+                self.expenses = expenses
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
+
 extension TestTableViewController {
     
     private func setupNavigationBar() {
         title = "Мои расходы"
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
@@ -77,26 +96,20 @@ extension TestTableViewController {
         let newExpenses = UIAlertAction(title: "Добавить", style: .default) { _ in
             guard let name = alert.textFields?.first?.text, !name.isEmpty else { return }
             guard let sum = alert.textFields?.last?.text, !sum.isEmpty else { return }
-            
-            let expensesNew = Test(descriptionExpenses: name, sumExpenses: Int(sum) ?? 0 )
-            self.expenses.append(expensesNew)
-            self.tableView.reloadData()
-            self.expens.sumExpenses += expensesNew.sumExpenses
-            self.expens.countExpenses += self.expenses.count
-            
+            self.save(name, sum: Int(sum) ?? 0)
+            self.expense.sumExpenses += Int64(Int(sum) ?? 0)
+                        
         }
+        
         let cancelAction = UIAlertAction(title: "Назад", style: .destructive)
-        
-        alert.addAction(newExpenses)
-        alert.addAction(cancelAction)
-        alert.addTextField { textField in
-            textField.placeholder = "Добавить имя расхода"
+            alert.addAction(newExpenses)
+            alert.addAction(cancelAction)
+            alert.addTextField { textField in
+                textField.placeholder = "Добавить имя расхода"
+            }
+            alert.addTextField { textField in
+                textField.placeholder = "Введите сумму"
+            }
+            present(alert, animated: true)
         }
-        alert.addTextField { textField in
-            textField.placeholder = "Введите сумму"
-        }
-    
-        
-        present(alert, animated: true)
-    }
 }
