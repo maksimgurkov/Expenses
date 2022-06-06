@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */; };
 		76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFA284BC8A800EC0042 /* AppDelegate.swift */; };
 		76C05BFD284BC8A800EC0042 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFC284BC8A800EC0042 /* SceneDelegate.swift */; };
-		76C05BFF284BC8A800EC0042 /* InfoListExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFE284BC8A800EC0042 /* InfoListExpensesViewController.swift */; };
 		76C05C02284BC8A800EC0042 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C05C00284BC8A800EC0042 /* Main.storyboard */; };
 		76C05C05284BC8A800EC0042 /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C03284BC8A800EC0042 /* Expenses.xcdatamodeld */; };
 		76C05C07284BC8A900EC0042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C05C06284BC8A900EC0042 /* Assets.xcassets */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		76C05BF7284BC8A800EC0042 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C05BFA284BC8A800EC0042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C05BFC284BC8A800EC0042 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		76C05BFE284BC8A800EC0042 /* InfoListExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoListExpensesViewController.swift; sourceTree = "<group>"; };
 		76C05C01284BC8A800EC0042 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76C05C04284BC8A800EC0042 /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		76C05C06284BC8A900EC0042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				76C05C15284BCAB000EC0042 /* MyListExpensesTableViewController.swift */,
-				76C05BFE284BC8A800EC0042 /* InfoListExpensesViewController.swift */,
+				768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,10 +201,10 @@
 				76C05C1C284BD24100EC0042 /* Model.swift in Sources */,
 				76C05C05284BC8A800EC0042 /* Expenses.xcdatamodeld in Sources */,
 				76C05C16284BCAB000EC0042 /* MyListExpensesTableViewController.swift in Sources */,
-				76C05BFF284BC8A800EC0042 /* InfoListExpensesViewController.swift in Sources */,
 				76C05C19284BCB1900EC0042 /* MyCellTableViewCell.swift in Sources */,
 				76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */,
 				76C05BFD284BC8A800EC0042 /* SceneDelegate.swift in Sources */,
+				768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

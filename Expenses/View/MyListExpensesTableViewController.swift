@@ -17,6 +17,11 @@ class MyListExpensesTableViewController: UITableViewController {
         setupNavigationBar()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -37,7 +42,7 @@ class MyListExpensesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let infoVC = segue.destination as? InfoListExpensesViewController else { return }
+        guard let infoVC = segue.destination as? TestTableViewController else { return }
         guard let index = tableView.indexPathForSelectedRow else { return }
         infoVC.expens = expenses[index.row]
     }

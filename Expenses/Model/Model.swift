@@ -17,8 +17,10 @@ class Expenses {
     init(title: String) {
         self.title = title
     }
-    
-    
-  
+}
+
+struct Test {
+    let descriptionExpenses: String
+    let sumExpenses: Int
     
 }
