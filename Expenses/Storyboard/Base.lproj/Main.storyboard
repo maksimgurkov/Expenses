@@ -15,10 +15,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="n2K-xe-BPf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="separatorColor" systemColor="systemGray5Color"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск по названию расхода" id="O6v-j1-WxE">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" systemColor="systemGray5Color"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
@@ -78,6 +80,7 @@
                                         <constraint firstItem="dlJ-zw-iBO" firstAttribute="bottom" secondItem="Pob-up-7tH" secondAttribute="bottomMargin" id="ttT-c8-x6o"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
                                     <outlet property="countDaysLabel" destination="rR0-1c-WOG" id="LvC-00-MFG"/>
                                     <outlet property="sumLabel" destination="jCU-BJ-BsR" id="fm0-il-1QC"/>
@@ -105,7 +108,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yye-k3-QLg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="93" id="JCn-Lh-oVg" customClass="ExpenseListTableViewCell" customModule="Expenses" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="375" height="93"/>
@@ -118,23 +121,25 @@
                                             <rect key="frame" x="16" y="11" width="343" height="71"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRM-2k-4pq">
-                                                    <rect key="frame" x="5" y="5" width="333" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="5" y="5" width="333" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijT-NI-FC7">
                                                     <rect key="frame" x="5" y="48" width="333" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="QfU-4b-vZP"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
                                             <constraints>
                                                 <constraint firstItem="DRM-2k-4pq" firstAttribute="leading" secondItem="MYc-N5-o0i" secondAttribute="leading" constant="5" id="39L-PR-9uF"/>
                                                 <constraint firstAttribute="trailing" secondItem="ijT-NI-FC7" secondAttribute="trailing" constant="5" id="3jP-w9-5vm"/>
-                                                <constraint firstItem="ijT-NI-FC7" firstAttribute="top" secondItem="DRM-2k-4pq" secondAttribute="bottom" constant="19" id="JVO-eK-Q0v"/>
+                                                <constraint firstItem="ijT-NI-FC7" firstAttribute="top" secondItem="DRM-2k-4pq" secondAttribute="bottom" constant="10" id="JVO-eK-Q0v"/>
                                                 <constraint firstItem="ijT-NI-FC7" firstAttribute="leading" secondItem="MYc-N5-o0i" secondAttribute="leading" constant="5" id="Rti-rb-Do2"/>
                                                 <constraint firstAttribute="trailing" secondItem="DRM-2k-4pq" secondAttribute="trailing" constant="5" id="ZIN-fg-s6n"/>
                                                 <constraint firstItem="DRM-2k-4pq" firstAttribute="top" secondItem="MYc-N5-o0i" secondAttribute="top" constant="5" id="qEZ-Kb-AFw"/>
@@ -149,9 +154,11 @@
                                         <constraint firstItem="MYc-N5-o0i" firstAttribute="top" secondItem="sfX-pQ-Md7" secondAttribute="topMargin" id="nYR-UY-64H"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <connections>
                                     <outlet property="descriptionExpenseLabel" destination="DRM-2k-4pq" id="Yui-qu-jf7"/>
                                     <outlet property="sumExpenseLabel" destination="ijT-NI-FC7" id="lYU-gw-cxO"/>
+                                    <outlet property="viewCellColor" destination="MYc-N5-o0i" id="eMB-Ni-mQZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,11 +193,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

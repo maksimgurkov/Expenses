@@ -33,7 +33,7 @@ class TestTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExpenseListTableViewCell
         let expense = expenses[indexPath.row]
         cell.descriptionExpenseLabel.text = expense.descriptionExpense
-        cell.sumExpenseLabel.text = "Сумма расхода\(expense.sumExpense) руб."
+        cell.sumExpenseLabel.text = "Сумма расхода \(expense.sumExpense) руб."
         return cell
     }
     
