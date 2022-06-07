@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7677EEBA284F41450032E5F7 /* ExpenseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7677EEB9284F41450032E5F7 /* ExpenseListTableViewCell.swift */; };
 		76786CE8284E140100CC3A91 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76786CE7284E140100CC3A91 /* StorageManager.swift */; };
 		768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */; };
 		76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05BFA284BC8A800EC0042 /* AppDelegate.swift */; };
@@ -16,11 +17,12 @@
 		76C05C07284BC8A900EC0042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C05C06284BC8A900EC0042 /* Assets.xcassets */; };
 		76C05C0A284BC8A900EC0042 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C05C08284BC8A900EC0042 /* LaunchScreen.storyboard */; };
 		76C05C16284BCAB000EC0042 /* MyListExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C15284BCAB000EC0042 /* MyListExpensesTableViewController.swift */; };
-		76C05C19284BCB1900EC0042 /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */; };
+		76C05C19284BCB1900EC0042 /* MyListExpensesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C18284BCB1900EC0042 /* MyListExpensesCellTableViewCell.swift */; };
 		76C05C1C284BD24100EC0042 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C05C1B284BD24100EC0042 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7677EEB9284F41450032E5F7 /* ExpenseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListTableViewCell.swift; sourceTree = "<group>"; };
 		76786CE7284E140100CC3A91 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		768CE0B2284DCE98004E50F5 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		76C05BF7284BC8A800EC0042 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +34,7 @@
 		76C05C09284BC8A900EC0042 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76C05C0B284BC8A900EC0042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76C05C15284BCAB000EC0042 /* MyListExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListExpensesTableViewController.swift; sourceTree = "<group>"; };
-		76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
+		76C05C18284BCB1900EC0042 /* MyListExpensesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListExpensesCellTableViewCell.swift; sourceTree = "<group>"; };
 		76C05C1B284BD24100EC0042 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +127,8 @@
 		76C05C17284BCAFF00EC0042 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				76C05C18284BCB1900EC0042 /* MyCellTableViewCell.swift */,
+				76C05C18284BCB1900EC0042 /* MyListExpensesCellTableViewCell.swift */,
+				7677EEB9284F41450032E5F7 /* ExpenseListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -211,8 +214,9 @@
 			files = (
 				76C05C1C284BD24100EC0042 /* Model.swift in Sources */,
 				76C05C05284BC8A800EC0042 /* Expenses.xcdatamodeld in Sources */,
+				7677EEBA284F41450032E5F7 /* ExpenseListTableViewCell.swift in Sources */,
 				76C05C16284BCAB000EC0042 /* MyListExpensesTableViewController.swift in Sources */,
-				76C05C19284BCB1900EC0042 /* MyCellTableViewCell.swift in Sources */,
+				76C05C19284BCB1900EC0042 /* MyListExpensesCellTableViewCell.swift in Sources */,
 				76C05BFB284BC8A800EC0042 /* AppDelegate.swift in Sources */,
 				76C05BFD284BC8A800EC0042 /* SceneDelegate.swift in Sources */,
 				768CE0B3284DCE98004E50F5 /* TestTableViewController.swift in Sources */,

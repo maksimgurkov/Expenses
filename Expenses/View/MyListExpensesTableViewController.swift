@@ -31,7 +31,7 @@ class MyListExpensesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyListExpensesCellTableViewCell
         let expense = expenses[indexPath.row]
         cell.titleLabel.text = expense.title
         cell.sumLabel.text = "\(expense.sumExpenses) руб."
