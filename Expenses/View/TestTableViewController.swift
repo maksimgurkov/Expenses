@@ -30,12 +30,10 @@ class TestTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let expen = expenses[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = expen.descriptionExpense
-        content.secondaryText = "Расход \(expen.sumExpense) руб."
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExpenseListTableViewCell
+        let expense = expenses[indexPath.row]
+        cell.descriptionExpenseLabel.text = expense.descriptionExpense
+        cell.sumExpenseLabel.text = "Сумма расхода\(expense.sumExpense) руб."
         return cell
     }
     
