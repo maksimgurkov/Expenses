@@ -31,7 +31,7 @@ class MyListExpensesCellTableViewCell: UITableViewCell {
     
     private func setupColorView() {
         let colorOne = UIColor(red: 255 / 255,
-                               green: 255 / 255,
+                               green: 180 / 255,
                                blue: 200 / 255,
                                alpha: 1).cgColor
         let colorTwo = UIColor(red: 150 / 255,

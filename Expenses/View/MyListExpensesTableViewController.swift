@@ -9,11 +9,22 @@ import UIKit
 
 class MyListExpensesTableViewController: UITableViewController {
     
+    private let searchController = UISearchController(searchResultsController: nil)
+    
     private var expenses: [Entity] = []
+    private var filteredExpenses: [Entity] = []
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        forSearchController()
         setupNavigationBar()
         fetchData()
 
@@ -27,12 +38,20 @@ class MyListExpensesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+           return filteredExpenses.count
+        }
         return expenses.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyListExpensesCellTableViewCell
-        let expense = expenses[indexPath.row]
+        var expense: Entity
+        if isFiltering {
+            expense = filteredExpenses[indexPath.row]
+        } else {
+            expense = expenses[indexPath.row]
+        }
         cell.titleLabel.text = expense.title
         cell.sumLabel.text = "\(expense.sumExpenses) руб."
         cell.countDaysLabel.text = "Добавлено \(expense.countExpenses) расходов"
@@ -56,7 +75,13 @@ class MyListExpensesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVC = segue.destination as? TestTableViewController else { return }
         guard let index = tableView.indexPathForSelectedRow else { return }
-        infoVC.expense = expenses[index.row]
+        let expense: Entity
+        if isFiltering {
+            expense = filteredExpenses[index.row]
+        } else {
+            expense = expenses[index.row]
+        }
+        infoVC.expense = expense
     }
     
     private func save(_ expensesName: String, sum: Int) {
@@ -117,5 +142,29 @@ extension MyListExpensesTableViewController {
         }
         present(alert, animated: true)
     }
+    
+}
+
+extension MyListExpensesTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func forSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Имя расхода"
+        
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredExpenses = expenses.filter{ (expense: Entity) -> Bool in
+            return expense.title?.lowercased().contains(searchText.lowercased()) ?? false
+        }
+        tableView.reloadData()
+    }
+    
     
 }
